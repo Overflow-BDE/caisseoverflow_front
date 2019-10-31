@@ -1,0 +1,33 @@
+nav {
+    width: 15em;
+    height: 100vh;
+    background: var(--menu-bg-color);
+    color: var(--menu-tx-color);
+
+    box-shadow: 0 0 15px var(--menu-bg-color);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0; 
+    padding: 5em 0 0 0;
+}
+
+nav ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1em;
+}
+
+nav ul .selected {
+    background-color: var(--menu-bg-color-selected);
+}
+
+nav ul li:not(:first-child) {
+    margin-top: .75em;
+}
+
+nav ul li svg {
+    margin-right: .5em;
+}

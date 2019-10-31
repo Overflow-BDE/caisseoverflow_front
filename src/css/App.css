@@ -1,0 +1,17 @@
+body {
+  background: var(--app-bg-color);
+}
+
+#root {
+  display: flex;
+  flex-direction: row;
+}
+
+#inner-app {
+    height: 100vh;
+    flex: 1;
+}
+
+#pinpad {
+  width: 400px;
+}

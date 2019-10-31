@@ -1,0 +1,15 @@
+:root {
+    --menu-bg-color: #444;
+    --menu-bg-color-selected: #343434;
+    --menu-tx-color: #eaeaea;
+
+    --app-bg-color: #333;
+    --app-tx-color: #eaeaea;
+
+    --pay-bg-color: var(--menu-bg-color);
+    --pay-tx-color: var(--menu-tx-color);
+
+    --pay-button-color: #555;
+
+    --itm-button-color: #555;
+}

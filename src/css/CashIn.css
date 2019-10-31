@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'digital-ft';
+    src: url('../ttf/DJBGetDigital.eot');
+    src: url('../ttf/DJBGetDigital.eot?#iefix') format('embedded-opentype'),
+        url('../ttf/DJBGetDigital.woff2') format('woff2'),
+        url('../ttf/DJBGetDigital.woff') format('woff'),
+        url('../ttf/DJBGetDigital.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#inner-app {
+    display: flex;
+    flex-direction: row;
+}
+
+#pinpad {
+    background: var(--pay-bg-color);
+    box-shadow: 0 0 5px var(--pay-button-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#pinpad .paymentlogo {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    background: var(--pay-button-color);
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#pinpad-display {
+    font-family: 'digital-ft';
+    width: 80%;
+    height: 100px;
+    margin: 48px auto 48px auto;
+    background: var(--pay-button-color);
+    border-radius: 20px;
+    box-shadow: 0 0 -10px;
+    font-size: 48px;
+    text-align: right;
+    line-height: 110px;
+    padding-right: 20px;
+    color: var(--pay-tx-color);
+}
+
+#pinpad-transaction {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--pay-tx-color);
+}
+
+#pinpad-transaction div span {
+    display: block;
+}
+
+#pinpad-typed {
+    color: var(--pay-tx-color);
+    text-align: center;
+}
+
+#pinpad-pad {
+    display: grid;
+    margin: 20px auto 20px auto;
+    grid-template-columns: auto auto auto;
+}
+
+#pinpad-pad span {
+    width: 70px;
+    height: 70px;
+
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+
+    line-height: 70px;
+    border-radius: 5px;
+    background-color: var(--pay-button-color);
+
+    margin: 5px;
+    color: var(--pay-tx-color);
+
+}
+
+#leftside {
+    flex: 1;
+}
+
+#leftside #buylist {
+    height: 10em;
+    overflow-y: scroll;
+    list-style-type: none;
+
+    margin: 1.5em;
+    color: var(--pay-tx-color);
+}
+
+#leftside #items {
+    display: flex;
+}
+
+#leftside #items .item {
+    text-align: center;
+    width: 150px;
+    color: var(--pay-tx-color);
+    background: var(--itm-button-color);
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+#leftside #items .item img {
+    height: 100px;
+    width: 100px;
+    margin: 10px auto;
+    display: block;
+    object-fit: cover;
+}
+
+#leftside #items .item span {
+    display: block;
+}
