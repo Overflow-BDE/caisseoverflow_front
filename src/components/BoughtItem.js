@@ -1,13 +1,30 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
+import {removeOrderItem} from '../actions/OrderAction'
+import { bindActionCreators } from 'redux';
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-export default class BoughtItem extends React.Component {
+class BoughtItem extends React.Component {
+
+    static propTypes = {
+        orderedItem: PropTypes.object.isRequired
+    }
 
     render() {
+        console.log("BoughtItem", this.props.orderedItem);
+
         return <li>
-            <Button color="primary">x</Button>
-            <span>1x Crêpe nature</span>
+            <Button color="primary" onClick={() => this.props.removeOrder({item: this.props.orderedItem.item})}>x</Button>
+            <span style={{marginLeft: '20px'}}>{this.props.orderedItem.quantity}x {this.props.orderedItem.item.name}</span>
         </li>;
     }
 
 }
+
+export default connect(
+    state => ({}),
+    dispatch => ({
+        removeOrder: bindActionCreators(removeOrderItem, dispatch)
+    })
+)(BoughtItem);

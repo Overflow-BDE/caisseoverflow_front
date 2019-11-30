@@ -11,7 +11,7 @@ class Icon extends React.Component {
       };
 
     render() {
-        return <li class={this.props.selected ? "selected" : ""}>
+        return <li className={this.props.selected ? "selected" : ""}>
             {this.props.icon}
             <div>{this.props.text}</div>
         </li>;

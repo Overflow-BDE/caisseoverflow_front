@@ -60,6 +60,8 @@
 #pinpad-typed {
     color: var(--pay-tx-color);
     text-align: center;
+    display: block;
+    flex: 0 0 1em;
 }
 
 #pinpad-pad {
