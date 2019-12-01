@@ -15,3 +15,33 @@ body {
 #pinpad {
   width: 400px;
 }
+
+#client-snackbar {
+  display: flex;
+  align-items: center;
+}
+
+#client-snackbar-icon {
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+.snackbar-success {
+  background-color: #43a047;
+  color: #0e230f;
+}
+
+.snackbar-info {
+  background-color: #8fc8f7;
+  color: #1f2c36;
+}
+
+.snackbar-warning {
+  background-color: #1f2c36;
+  color: #372300;
+}
+
+.snackbar-error {
+  background-color: #d32f2f;
+  color: #2e0a0a;
+}

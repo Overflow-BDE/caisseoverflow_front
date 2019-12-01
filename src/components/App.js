@@ -6,11 +6,14 @@ import {
 } from "react-router-dom";
 import Menu from './Menu';
 import CashIn from './CashIn';
+import OrderList from './OrderList';
 
 import '../css/App.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchItemsAction } from '../actions/ItemsAction';
+
+import Snackbar from './Snackbar'
 
 class App extends React.Component {
 
@@ -26,7 +29,11 @@ class App extends React.Component {
           <Route exact path="/">
             <CashIn />
           </Route>
+          <Route exact path="/orders">
+            <OrderList/>
+          </Route>
         </Switch>
+        <Snackbar/>
       </Router>
     );
   }

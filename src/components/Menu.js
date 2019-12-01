@@ -11,9 +11,9 @@ class Menu extends React.Component {
     render() {
         return <nav>
             <ul>
-                <MenuItem icon={<CreditCard />} text="Encaisser" selected={true} />
-                <MenuItem icon={<AccountBalance />} text="Comptes" />
-                <MenuItem icon={<Settings />} text="Options" />
+                <MenuItem path="/" icon={<CreditCard />} text="Encaisser" />
+                <MenuItem path="/orders" icon={<AccountBalance />} text="Comptes" />
+                <MenuItem path="/settings" icon={<Settings />} text="Options" />
             </ul>
         </nav>;
     }
