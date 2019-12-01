@@ -1,6 +1,7 @@
-import { ADD_ORDER_ITEM, REMOVE_ORDER_ITEM } from "../actions/OrderAction"
+import { ADD_ORDER_ITEM, REMOVE_ORDER_ITEM } from '../actions/OrderAction'
+import {ORDER_VALIDATED_ACCEPTED_ACTION} from '../actions/PinpadAction'
 
-const initialState = { ordered: [] } // {item, quantity}
+const initialState = { ordered: [] } 
 
 export default function(state = initialState, action) {
     let ordered; // So it fucking stop to cry
@@ -33,6 +34,9 @@ export default function(state = initialState, action) {
             }
 
             return { ordered: ordered.filter(a => a.quantity > 0 ) };
+
+        case ORDER_VALIDATED_ACCEPTED_ACTION:
+            return { ...state, ordered: [] }
 
         default:
             return state;

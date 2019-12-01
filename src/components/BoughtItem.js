@@ -12,8 +12,6 @@ class BoughtItem extends React.Component {
     }
 
     render() {
-        console.log("BoughtItem", this.props.orderedItem);
-
         return <li>
             <Button color="primary" onClick={() => this.props.removeOrder({item: this.props.orderedItem.item})}>x</Button>
             <span style={{marginLeft: '20px'}}>{this.props.orderedItem.quantity}x {this.props.orderedItem.item.name}</span>

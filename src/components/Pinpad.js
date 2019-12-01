@@ -4,7 +4,7 @@ import MoneyLogo from '../img/Money.png'
 
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
-import { pressNumberAction, addOperationAction } from '../actions/PinpadAction';
+import { pressNumberAction, addOperationAction, orderValidatedAction } from '../actions/PinpadAction';
 import PinpadOperation from './PinpadOperation';
 import Order from '../model/Order'
 
@@ -23,7 +23,7 @@ class Pinpad extends React.Component {
 
         let order = new Order(orderedItems, operations);
 
-        console.log(order)
+        this.props.sendOrder(order)
     }
 
     render () {
@@ -32,7 +32,6 @@ class Pinpad extends React.Component {
 
         for(let i = 0; i < this.props.orderedItems.length; i++) {
             price += (this.props.orderedItems[i].quantity * this.props.orderedItems[i].item.price)
-            console.log(price)
         }
 
         for (let i = 0; i < this.props.operations.length; i++) {
@@ -104,6 +103,7 @@ export default connect(
     }),
     dispatch => ({
         type: bindActionCreators(pressNumberAction, dispatch),
-        addOperation: bindActionCreators(addOperationAction, dispatch)
+        addOperation: bindActionCreators(addOperationAction, dispatch),
+        sendOrder: bindActionCreators(orderValidatedAction, dispatch)
     })
 )(Pinpad);
