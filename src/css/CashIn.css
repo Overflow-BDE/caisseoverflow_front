@@ -87,6 +87,17 @@
 
 }
 
+#pinpad-oplist {
+    flex: 0 0 200px;
+    overflow-y: scroll;
+    list-style-type: none;
+    color: var(--pay-tx-color);
+}
+
+#pinpad-transaction {
+    flex: 0 0 100px;
+}
+
 #leftside {
     flex: 1;
 }

@@ -1,6 +1,7 @@
-import { PRESS_NUMBER_ACTION, SEND_CASH_ACTION, SEND_LYDIA_ACTION, RETREIVE_CASH_ACTION, RETREIVE_LYDIA_ACTION } from "../actions/PinpadAction";
+import { PRESS_NUMBER_ACTION, ADD_OPERATION_ACTION, REMOVE_OPERATION_ACTION, ORDER_VALIDATED_ACCEPTED_ACTION } from "../actions/PinpadAction";
+import Operation from "../model/Operation";
 
-const initialState = { key: '', typedField: '-', transactions: [] }
+const initialState = { key: '', typedField: '', operations: [] }
 
 export default function (state = initialState, action) {
     let typedField;
@@ -29,13 +30,19 @@ export default function (state = initialState, action) {
                 return { ...state, typedField: state.typedField += action.payload.key };
             }
 
-        case SEND_CASH_ACTION:
-        case SEND_LYDIA_ACTION:
-            return {...state};
+        case ADD_OPERATION_ACTION:
+            if (state.typedField.length === 0 || parseFloat(state.typedField) === 0.0) {
+                return state
+            }
+ 
+            let pl = action.payload
+            return { ...state, typedField: '', operations: [...state.operations, new Operation(pl.id, pl.type, state.typedField)]};
 
-        case RETREIVE_CASH_ACTION:
-        case RETREIVE_LYDIA_ACTION:
-            return { ...state };
+        case REMOVE_OPERATION_ACTION:
+            return {...state, operations: state.operations.filter(a => a.id !== action.payload.operation)}
+
+        case ORDER_VALIDATED_ACCEPTED_ACTION:
+            return { ...state, operations: [], typedField: ''}
 
         default:
             return state;

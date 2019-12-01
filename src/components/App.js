@@ -8,8 +8,15 @@ import Menu from './Menu';
 import CashIn from './CashIn';
 
 import '../css/App.css';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchItemsAction } from '../actions/ItemsAction';
 
-export default class App extends React.Component {
+class App extends React.Component {
+
+  componentDidMount() {
+    this.props.fetchItems({})
+  }
 
   render() {
     return (
@@ -23,5 +30,11 @@ export default class App extends React.Component {
       </Router>
     );
   }
-
 }
+
+export default connect(
+  state => ({}),
+  dispatch => ({
+    fetchItems: bindActionCreators(fetchItemsAction, dispatch)
+  })
+)(App)
