@@ -1,0 +1,46 @@
+#OrderList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#OrderList-Header {
+    text-align: center;
+}
+
+.OrderList-Order {
+    flex: 1;
+    overflow-y: scroll;
+}
+
+.OrderList-Order-Header {
+    display: flex;
+    flex-direction: row;
+    color: var(--menu-tx-color);
+}
+
+.OrderList-Order-Expand {
+    flex: 0;
+}
+
+.OrderList-Order-Header > div {
+    align-items: center;
+}
+
+.OrderList-Order-Header .OrderList-Order-Items {
+    flex: 1;
+}
+
+.OrderList-Order-Items {
+    margin: 10px;
+}
+
+.OrderList-Order-Items span {
+    display: block;
+}
+
+.OrderList-Order-Transactions span {
+    display: block;
+}

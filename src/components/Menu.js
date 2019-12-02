@@ -12,7 +12,7 @@ class Menu extends React.Component {
         return <nav>
             <ul>
                 <MenuItem path="/" icon={<CreditCard />} text="Encaisser" />
-                <MenuItem path="/orders" icon={<AccountBalance />} text="Comptes" />
+                <MenuItem path="/orders" icon={<AccountBalance />} text="Commandes" />
                 <MenuItem path="/settings" icon={<Settings />} text="Options" />
             </ul>
         </nav>;
