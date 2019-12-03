@@ -6,7 +6,7 @@ import {FETCH_ITEMS_ACTION} from '../actions/ItemsAction'
 import {ORDER_VALIDATED_ACTION} from '../actions/PinpadAction';
 import {FETCH_ORDERS_ACTION} from '../actions/OrderAction';
 
-export const URL = "http://localhost:5555"
+export const URL = ""
 
 export default function* vsaga() {
     yield takeEvery(FETCH_ITEMS_ACTION, fetchItems);

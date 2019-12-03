@@ -35,6 +35,11 @@
     flex: 1;
 }
 
+.OrderList-Order-Element{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .OrderList-Order-Element:not(:last-child) {
     margin-bottom: 10px;
 }
