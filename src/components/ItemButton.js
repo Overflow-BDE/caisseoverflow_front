@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from "prop-types";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { addOrderItem } from '../actions/OrderAction'
+import { addOrderItemAction } from '../actions/OrderAction'
 import { URL } from '../saga/index'
 import { toggleSnackbarAction } from '../actions/SnackbarAction';
 
@@ -15,7 +15,6 @@ class ItemButton extends React.Component {
     render() {
         return <div className="item" onClick={() => {
             this.props.addItem({ item: this.props.item });
-            this.props.toggleSnack({ open: true, message: 'coucou', variant: 'info'})
         } }>
             <img src={URL + "/assets/" + this.props.item.icon} alt={this.props.item.name} />
             <span className="item-price">{(this.props.item.price/100).toFixed(2)}€</span>
@@ -28,7 +27,7 @@ class ItemButton extends React.Component {
 export default connect(
     state => ({}),
     dispatch => ({
-        addItem: bindActionCreators(addOrderItem, dispatch),
+        addItem: bindActionCreators(addOrderItemAction, dispatch),
         toggleSnack: bindActionCreators(toggleSnackbarAction, dispatch)
     })
 )(ItemButton)

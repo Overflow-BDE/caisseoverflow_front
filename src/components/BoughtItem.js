@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
-import {removeOrderItem} from '../actions/OrderAction'
+import {removeOrderItemAction} from '../actions/OrderAction'
 import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -23,6 +23,6 @@ class BoughtItem extends React.Component {
 export default connect(
     state => ({}),
     dispatch => ({
-        removeOrder: bindActionCreators(removeOrderItem, dispatch)
+        removeOrder: bindActionCreators(removeOrderItemAction, dispatch)
     })
 )(BoughtItem);

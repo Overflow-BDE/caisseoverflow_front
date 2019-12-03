@@ -8,17 +8,19 @@
 
 #OrderList-Header {
     text-align: center;
+    color: var(--menu-tx-color);
 }
 
 .OrderList-Order {
     flex: 1;
     overflow-y: scroll;
+    width: 80%;
+    margin: auto;
 }
 
 .OrderList-Order-Header {
     display: flex;
     flex-direction: row;
-    color: var(--menu-tx-color);
 }
 
 .OrderList-Order-Expand {
@@ -33,6 +35,10 @@
     flex: 1;
 }
 
+.OrderList-Order-Element:not(:last-child) {
+    margin-bottom: 10px;
+}
+
 .OrderList-Order-Items {
     margin: 10px;
 }
@@ -41,6 +47,16 @@
     display: block;
 }
 
-.OrderList-Order-Transactions span {
-    display: block;
+.OrderList-Order-Transactions {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+#OrderList-Charts {
+    text-align: center;
+}
+
+#OrderList-Charts h2 {
+    color: var(--menu-tx-color);
 }

@@ -1,13 +1,15 @@
-import { ADD_ORDER_ITEM, REMOVE_ORDER_ITEM } from '../actions/OrderAction'
+import { ADD_ORDER_ITEM_ACTION, REMOVE_ORDER_ITEM_ACTION, RETREIVED_ORDERS_ACTION } from '../actions/OrderAction'
 import {ORDER_VALIDATED_ACCEPTED_ACTION} from '../actions/PinpadAction'
 
-const initialState = { ordered: [] } 
+// Ordered: current thing in the orders
+// Orders: All thing ordered ever
+const initialState = { ordered: [], orders: [] } 
 
 export default function(state = initialState, action) {
-    let ordered; // So it fucking stop to cry
+    let ordered; // So it  stop to fucking cry
 
     switch (action.type) {
-        case ADD_ORDER_ITEM:
+        case ADD_ORDER_ITEM_ACTION:
             ordered = [...state.ordered];
             let found = false;
 
@@ -24,7 +26,7 @@ export default function(state = initialState, action) {
 
             return { ordered };
 
-        case REMOVE_ORDER_ITEM:
+        case REMOVE_ORDER_ITEM_ACTION:
             ordered = [...state.ordered];
             
             for (let i = 0; i < ordered.length; i++) {
@@ -37,6 +39,9 @@ export default function(state = initialState, action) {
 
         case ORDER_VALIDATED_ACCEPTED_ACTION:
             return { ...state, ordered: [] }
+
+        case RETREIVED_ORDERS_ACTION:
+            return { ...state, orders: [...action.payload.orders] }
 
         default:
             return state;
